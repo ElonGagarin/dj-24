@@ -1,11 +1,12 @@
 import csv
 
 from django.core.management.base import BaseCommand
-from phones.models import Phone
+# from phones.models import Phone
 
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
+
         pass
 
     def handle(self, *args, **options):
@@ -14,4 +15,10 @@ class Command(BaseCommand):
 
         for phone in phones:
             # TODO: Добавьте сохранение модели
-            pass
+            print(phone)
+
+
+            # pass
+
+c = Command()
+c.handle()
