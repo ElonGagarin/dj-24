@@ -16,7 +16,7 @@ def show_catalog(request):
     sort = request.GET.get('sort', '-name')
     print(sort)
     phone_objects = Phone.objects.all()
-    context = {'phones': phone_objects.extra(order_by = [sort]), 'sort':sort}
+    context = {'phones': phone_objects.extra(order_by = [sort])}
     return render(request, template, context)
 
 
