@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'school',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -47,7 +48,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+
 
 ROOT_URLCONF = 'website.urls'
 
@@ -74,6 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'netology_orm_migrations',
+        'USER': 'yuriy',
+        'PASSWORD': 'yuriyyuriy',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -102,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'RU-ru'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Europe/Moscow'
 
@@ -126,8 +135,8 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-try:
-    from .settings_local import *
-except ImportError:
-    pass
+# try:
+#     from .settings_local import *
+# except ImportError:
+#     pass
 
