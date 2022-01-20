@@ -20,7 +20,7 @@ Content-Type: application/json
 ###
 
 # обновление продукта
-PATCH {{baseUrl}}/products/1/
+PATCH {{baseUrl}}/products/3/
 Content-Type: application/json
 
 {
@@ -36,7 +36,7 @@ Content-Type: application/json
 ###
 
 # поиск продуктов по названию и описанию
-GET {{baseUrl}}/products/?search=помидор
+GET {{baseUrl}}/products/?search=Поми
 Content-Type: application/json
 
 ###
@@ -46,17 +46,17 @@ POST {{baseUrl}}/stocks/
 Content-Type: application/json
 
 {
-  "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru3",
+  "address": "мой адрес ",
   "positions": [
     {
       "product": 2,
-      "quantity": 250,
-      "price": 120.50
+      "quantity": 20,
+      "price": 1.50
     },
     {
       "product": 3,
-      "quantity": 100,
-      "price": 180
+      "quantity": 10,
+      "price": 10
     }
   ]
 }
@@ -64,7 +64,7 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/4/
+PATCH {{baseUrl}}/stocks/1/
 Content-Type: application/json
 
 {
