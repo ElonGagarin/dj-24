@@ -24,15 +24,14 @@ class SensorsList(generics.ListCreateAPIView):
             serializer.save()
         return Response(request.data)
 
-class SensorDetail(generics.RetrieveUpdateDestroyAPIView): # RetrieveUpdateDestroyAPIView
+class SensorDetail(generics.RetrieveUpdateAPIView):
     queryset = Sensor.objects.all()
     serializer_class = SensorDetailSerializer
 
-
-
-
-    # def path(self, request):
-    #     serializer = SensorCreateSerializer(data=request.data)
+    # def patch(self, request):
+    #     print('>>> ',request.data)
+    #     serializer = SensorCreateSerializer(data=request.data, partial=True)
+        
     #     if serializer.is_valid():
     #         serializer.save()
     #     return Response(request.data)
